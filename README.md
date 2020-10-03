@@ -5,6 +5,17 @@ This repository include  Morpheme analyzer for gopizza
 version == 0.4.3
 include == KoNLpy, Mecab
 
+# Why use Mecab
+Loading time: Class loading time, including dictionary loads.    
+Execution time: Time for executing the pos method for each class, with 100K characters.    
+|Name | Loding time|Excution time|
+|:---|---:|:---:|
+|Kkma| 5.6988 secs|35.7163 secs|
+|Komoran| 5.4866 secs|25.6008 secs|
+|Hannanum| 0.6591 secs|8.8251 secs|
+|Okt (previous Twitter)| 1.4870 secs|2.4714 secs|
+|Mecab| **0.0007 secs**|**0.2838 secs**|
+
 ## MAC OS
 1. install KoNLpy
 ```
