@@ -1,7 +1,7 @@
 # GoNLpy
 This repository include  Morpheme analyzer for gopizza
 
-# Install KoNLPy
+# Version KoNLPy
 version == 0.4.3    
 include == KoNLpy, Mecab    
 
@@ -24,6 +24,8 @@ Test 100K iteration
 converter finished 6.885154724121094 sec     
 Just 7 second used !!      
 
+
+# Install KoNLPy
 ## MAC OS
 1. install KoNLpy
 ```
