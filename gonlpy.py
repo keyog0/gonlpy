@@ -225,62 +225,27 @@ if __name__ == '__main__' :
 	se = '!@#!@$!@클래식 치즈 피자 세트 맛ㅇ있어요 정말로 !@%!@'
 	fe = '!@#!@$!@파인애플이 들어간 하와이안 돌체 화덕 피자!@%!@'
 	com = '!@!!!@!@!@슈퍼콤비네이션!@#!@#슈퍼 콤비네이션 피자 !@#'
-	print(converter.convert('청포도 에이드'))
-	print(converter.convert('마운틴듀 355ml '))
-	print(converter.convert('미린다 오렌지_option'))
-	print(converter.convert('자몽에이드_option'))
-	print(converter.convert('라임에이드_option'))
-	print(converter.convert('블루베리에이드_option'))
-	print(converter.convert('콜드브루 아이스커피_option'))
-	print(converter.convert('맛있는 콘치즈'))
-	print(converter.convert('프렌치프라이 사이드'))
-	print(converter.convert('순살3조각'))
-	print(converter.convert('치즈스틱 치즈 스틱'))
-	print(converter.convert('콘샐러드 콘 샐러드 '))
-	print(converter.convert('칠리치즈 칠리 치즈 프라이즈 프라이'))
-	print(converter.convert('촠촠 브라우니'))
-	print(converter.convert('새콤달콤하고 프레쉬한 토마토의 맛 혼자서 부담없이 즐기는 클래식한 파스타'))
-	print(converter.convert('알리오올리오 파스타 알리오 올리오 파스타'))
-	print(converter.convert('까르보나라 크림파스타 크림 파스타'))
-	print(converter.convert('치즈 오븐 파스타'))
-	print(converter.convert('불닭 파스타'))
-	print(converter.convert('갈릭디핑소스 갈릭소스'))
-	print(converter.convert('랜치 소스 랜치소스 렌치소스'))
-	print(converter.convert('파이어 소스 파이어소스 볼케이노소스'))
-	print(converter.convert('치즈추가 치즈 추가'))
-	print(converter.convert('고고 패키지 고고패키지 2인 세트'))
-	print(converter.convert('고고 패키지 고고패키지 2인 세트'))
 
-	print(converter.convert('# 피자의 클래식! 신선한 토마토 소스와 고소한 치즈의 오리지널 피자'))
-	print(converter.convert(o))
-	print(converter.convert(se))
-	print(converter.convert(fe))
-	print(converter.convert(com))
-	print(converter.convert(m))
-	print(converter.convert(o))
-	print(converter.convert(se))
-	print(converter.convert(fe))
-	print(converter.convert(com))
 	start = time.time()
-	# for i in tqdm(range(100000)) :
-	#	 mecab.pos(u'# 노란 체다치즈와 고소한 스모크햄이 만나 샌드위치처럼 든든하고 부담없는 한 끼 식사!!')
-	# finish = time.time()-start
-	# print('mecab finished {} sec'.format(finish))
-	# start = time.time()
-	# for i in tqdm(range(100000)) :
-	#	 okt.pos(u'# 노란 체다치즈와 고소한 스모크햄이 만나 샌드위치처럼 든든하고 부담없는 한 끼 식사!!')
-	# finish = time.time()-start
-	# print('okt finished {} sec'.format(finish))
+	for i in tqdm(range(100000)) :
+		mecab.pos(m)
+	finish = time.time()-start
+	print('mecab finished {} sec'.format(finish))
+	start = time.time()
+	for i in tqdm(range(100000)) :
+		okt.pos(m)
+	finish = time.time()-start
+	print('okt finished {} sec'.format(finish))
 
-	# for i in tqdm(range(100000)) :
-	#	 converter_fast(m)
-	# finish = time.time()-start
-	# print('converter_fast finished {} sec'.format(finish))
-	# start = time.time()
-	# for i in tqdm(range(100000)) :
-	#	 converter(m)
-	# finish = time.time()-start
-	# print('converter finished {} sec'.format(finish))
+	for i in tqdm(range(100000)) :
+		converter.converter_fast(m)
+	finish = time.time()-start
+	print('converter_fast finished {} sec'.format(finish))
+	start = time.time()
+	for i in tqdm(range(100000)) :
+		converter.convert(m)
+	finish = time.time()-start
+	print('converter finished {} sec'.format(finish))
 
 	for i in tqdm(range(2500)) :
 		converter.convert('청포도 에이드')
