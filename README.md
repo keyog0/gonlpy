@@ -61,7 +61,7 @@ converter = NameConverter()
 output = converter.convert('청포도 에이드')
 print(output)
 ```
->> 청포도 에이드 음료
+> 청포도 에이드 음료
 
 # Modify keyword
 If you want to modify keyword,     
