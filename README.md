@@ -2,8 +2,8 @@
 This repository include  Morpheme analyzer for gopizza
 
 # Install KoNLPy
-version == 0.4.3
-include == KoNLpy, Mecab
+version == 0.4.3    
+include == KoNLpy, Mecab    
 
 # Why use Mecab
 Loading time: Class loading time, including dictionary loads.    
