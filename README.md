@@ -1,4 +1,4 @@
-# gonlpy
+# GoNLpy
 This repository include  Morpheme analyzer for gopizza
 
 # Install KoNLPy
