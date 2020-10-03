@@ -18,6 +18,11 @@ Execution time: Time for executing the pos method for each class, with 100K char
 
 ![Alt text](readme/time.png)
 
+# Speed Our data
+Test 100K iteration 
+100%|██████████████████████████████████████| 2500/2500 [00:06<00:00, 364.12it/s]
+converter finished 6.885154724121094 sec
+Just 7 second used !!
 
 ## MAC OS
 1. install KoNLpy
@@ -42,3 +47,31 @@ sudo apt-get install python3-dev; pip3 install konlpy   # Python 3.x
 sudo apt-get install curl
 bash <(curl -s https://raw.githubusercontent.com/konlpy/konlpy/master/scripts/mecab.sh)
 ```
+
+# Use this code
+Cloning this repository    
+```
+git clone https://github.com/Keunyoung-Jung/gonlpy.git
+```
+Copy `gonlpy.py`file and `keyword`folder to the folder you want to use.
+
+example code
+```
+converter = NameConverter()
+output = converter.convert('청포도 에이드')
+print(output)
+```
+>> 청포도 에이드 음료
+
+# Modify keyword
+If you want to modify keyword,     
+go `keyword`folder and Modify `json`file
+![Alt text](readme/keyword.png)
+
+# Add Menu
+If you want to add menu,     
+open `gonlpy.py`file and Add menu name to `dictionary`array
+![Alt text](readme/dictionary.png)
+
+# Reference
+https://konlpy.org/en/latest/
