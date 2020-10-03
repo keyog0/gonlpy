@@ -65,12 +65,12 @@ print(output)
 
 # Modify keyword
 If you want to modify keyword,     
-go `keyword`folder and Modify `json`file
+go `keyword`folder and Modify `json`file     
 ![Alt text](readme/keyword.png)
 
 # Add Menu
 If you want to add menu,     
-open `gonlpy.py`file and Add menu name to `dictionary`array
+open `gonlpy.py`file and Add menu name to `dictionary`array     
 ![Alt text](readme/dictionary.png)
 
 # Reference
