@@ -19,10 +19,10 @@ Execution time: Time for executing the pos method for each class, with 100K char
 ![Alt text](readme/time.png)
 
 # Speed Our data
-Test 100K iteration 
-100%|██████████████████████████████████████| 2500/2500 [00:06<00:00, 364.12it/s]
-converter finished 6.885154724121094 sec
-Just 7 second used !!
+Test 100K iteration     
+100%|██████████████████████████████████████| 2500/2500 [00:06<00:00, 364.12it/s]      
+converter finished 6.885154724121094 sec     
+Just 7 second used !!      
 
 ## MAC OS
 1. install KoNLpy
