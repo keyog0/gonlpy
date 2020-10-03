@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from konlpy.tag import Mecab
 from konlpy.tag import Okt
 import time
@@ -63,9 +64,13 @@ dictionary_drink = [
 				'블루베리 레몬 에이드',
 				'콜드브루'
 				]
+
 set_combo = [' 세트',' 콤보',' 사이드',' 음료']
-keyword_map = json.load(open('keyword.json'))
-print(keyword_map)
+keyword_pizza = json.load(open('keyword/keyword_pizza.json'))
+keyword_side = json.load(open('keyword/keyword_side.json'))
+keyword_drink = json.load(open('keyword/keyword_drink.json'))
+keyword_etc = json.load(open('keyword/keyword_etc.json'))
+print(keyword_pizza)
 
 def converter(text) :
 	convert = mecab.nouns(text)
@@ -73,13 +78,13 @@ def converter(text) :
 	set_toggle = False
 	combo_toggle = False
 	for noun in convert :
-		if noun in keyword_map :
-			if keyword_map[noun] == 100 :
+		if noun in keyword_pizza :
+			if keyword_pizza[noun] == 100 :
 				set_toggle = True
-			elif keyword_map[noun] == 200 :
+			elif keyword_pizza[noun] == 200 :
 				combo_toggle = True
 			else :
-				tmp.append(keyword_map[noun])
+				tmp.append(keyword_pizza[noun])
 	most = Counter(tmp).most_common(1)
 	if set_toggle :
 		return dictionary[most[0][0]]+set_combo[0]
@@ -94,13 +99,13 @@ def converter_side(text) :
 	set_toggle = False
 	combo_toggle = False
 	for noun in convert :
-		if noun in keyword_map :
-			if keyword_map[noun] == 100 :
+		if noun in keyword_pizza :
+			if keyword_pizza[noun] == 100 :
 				set_toggle = True
-			elif keyword_map[noun] == 200 :
+			elif keyword_pizza[noun] == 200 :
 				combo_toggle = True
 			else :
-				tmp.append(keyword_map[noun])
+				tmp.append(keyword_pizza[noun])
 	most = Counter(tmp).most_common(1)
 	if set_toggle :
 		return dictionary[most[0][0]]+set_combo[0]
@@ -112,21 +117,21 @@ def converter_side(text) :
 def converter_fast(text) :
 	convert = mecab.nouns(text)
 	for noun in convert :
-		if noun in keyword_map :
-			return dictionary[keyword_map[noun]]
+		if noun in keyword_pizza :
+			return dictionary[keyword_pizza[noun]]
 
 def okt_converter(text) :
 	tmp = []
 	set_toggle = False
 	combo_toggle = False
 	for noun in convert :
-		if noun in keyword_map :
-			if keyword_map[noun] == 100 :
+		if noun in keyword_pizza :
+			if keyword_pizza[noun] == 100 :
 				set_toggle = True
-			elif keyword_map[noun] == 200 :
+			elif keyword_pizza[noun] == 200 :
 				combo_toggle = True
 			else :
-				tmp.append(keyword_map[noun])
+				tmp.append(keyword_pizza[noun])
 	most = Counter(tmp).most_common(1)
 	if set_toggle :
 		return dictionary[most[0][0]]+set_combo[0]
@@ -138,8 +143,8 @@ def okt_converter(text) :
 def okt_converter_fast(text) :
 	convert = mecab.nouns(text)
 	for noun in convert :
-		if noun in keyword_map :
-			return dictionary[keyword_map[noun]]
+		if noun in keyword_pizza :
+			return dictionary[keyword_pizza[noun]]
 
 if __name__ == '__main__' :
     m = '# 노란 체다치즈와 고소한 스모크햄이 만나 샌드위치처럼 든든하고 부담없는 한 끼 식사!!'
@@ -162,8 +167,17 @@ if __name__ == '__main__' :
     print(mecab.nouns('칠리치즈 칠리 치즈 프라이즈 프라이'))
     print(mecab.nouns('촠촠 브라우니'))
     print(mecab.nouns('새콤달콤하고 프레쉬한 토마토의 맛 혼자서 부담없이 즐기는 클래식한 파스타'))
+    print(mecab.morphs('알리오올리오 파스타 알리오 올리오 파스타'))
+    print(mecab.morphs('까르보나라 크림파스타 크림 파스타'))
+    print(mecab.morphs('치즈 오븐 파스타'))
+    print(mecab.morphs('불닭 파스타'))
+    print(mecab.morphs('갈릭디핑소스 갈릭소스'))
+    print(mecab.morphs('랜치 소스 랜치소스 렌치소스'))
+    print(mecab.morphs('파이어 소스 파이어소스 볼케이노소스'))
+    print(mecab.morphs('치즈추가 치즈 추가'))
+    print(mecab.morphs('고고 패키지 고고패키지 2인 세트'))
 
-    print(converter(m))
+    print(converter('# 피자의 클래식! 신선한 토마토 소스와 고소한 치즈의 오리지널 피자'))
     print(converter(o))
     print(converter(se))
     print(converter(fe))
