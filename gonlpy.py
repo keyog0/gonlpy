@@ -185,24 +185,24 @@ class NameConverter :
 		most = Counter(tmp).most_common(1)
 		return dictionary[most[0][0]]
 
-	def converter_fast(self,text) :
+	def converter_fast(self,text,keyword,dictionary) :
 		convert = mecab.nouns(text)
 		for noun in convert :
-			if noun in keyword_pizza :
-				return dictionary[keyword_pizza[noun]]
+			if noun in keyword :
+				return dictionary[keyword[noun]]
 
-	def okt_converter(self,text) :
+	def okt_converter(self,text,keyword,dictionary) :
 		tmp = []
 		set_toggle = False
 		combo_toggle = False
 		for noun in convert :
-			if noun in keyword_pizza :
-				if keyword_pizza[noun] == 100 :
+			if noun in keyword :
+				if keyword[noun] == 100 :
 					set_toggle = True
-				elif keyword_pizza[noun] == 200 :
+				elif keyword[noun] == 200 :
 					combo_toggle = True
 				else :
-					tmp.append(keyword_pizza[noun])
+					tmp.append(keyword[noun])
 		most = Counter(tmp).most_common(1)
 		if set_toggle :
 			return dictionary[most[0][0]]+set_combo[0]
@@ -211,11 +211,11 @@ class NameConverter :
 		else :
 			return dictionary[most[0][0]]
 
-	def okt_converter_fast(self,text) :
+	def okt_converter_fast(self,text,keyword,dictionary) :
 		convert = mecab.nouns(text)
 		for noun in convert :
-			if noun in keyword_pizza :
-				return dictionary[keyword_pizza[noun]]
+			if noun in keyword :
+				return dictionary[keyword[noun]]
 
 if __name__ == '__main__' :
 	converter = NameConverter()
