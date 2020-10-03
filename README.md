@@ -16,6 +16,9 @@ Execution time: Time for executing the pos method for each class, with 100K char
 |Okt (previous Twitter)| 1.4870 secs|2.4714 secs|
 |Mecab| **0.0007 secs**|**0.2838 secs**|
 
+![Alt text](readme/time.png)
+
+
 ## MAC OS
 1. install KoNLpy
 ```
