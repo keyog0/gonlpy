@@ -56,7 +56,9 @@ git clone https://github.com/Keunyoung-Jung/gonlpy.git
 Copy `gonlpy.py`file and `keyword`folder to the folder you want to use.
 
 example code
-```
+```python
+from gonlpy import NameConverter
+
 converter = NameConverter()
 output = converter.convert('청포도 에이드')
 print(output)
