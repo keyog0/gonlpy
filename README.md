@@ -82,4 +82,4 @@ open `gonlpy.py`file and Add menu name to `dictionary`array
 ![Alt text](readme/dictionary.png)
 
 # Reference
-https://konlpy.org/en/latest/
+https://konlpy.org/en/latest/    
